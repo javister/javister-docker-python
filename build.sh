@@ -34,7 +34,7 @@ EOF
     done
     shift $((OPTIND-1))
 
-    VERSION=1.0.java8
+    VERSION=3.4
     DATE=$(date +"%Y-%m-%d")
 
     IMAGE_TAG="javister-docker-docker.bintray.io/javister/javister-docker-python3"
