@@ -15,4 +15,4 @@ RUN . /usr/local/bin/yum-proxy && \
     yum-install && \
     echo '*** Clean up yum caches' && \
     yum-clean && \
-    chmod --recursive +x /etc/my_init.d/*.sh /etc/service
+    chmod --recursive +x /etc/my_init.d/*.sh /etc/service /usr/local/bin/*

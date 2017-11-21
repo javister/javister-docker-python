@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. proxyenv
+
+export http_proxy=${http_proxy}
+export https_proxy=${http_proxy}
+
+PIP="pip3 --cert=/etc/pki/tls/certs/ca-bundle.crt "
+[ -n "$http_proxy" ] && PIP="$PIP --proxy=$http_proxy"
+
+$PIP $@
