@@ -34,7 +34,7 @@ EOF
     done
     shift $((OPTIND-1))
 
-    VERSION=3.4
+    VERSION=34
     DATE=$(date +"%Y-%m-%d")
 
     IMAGE_TAG="javister-docker-docker.bintray.io/javister/javister-docker-python3"
@@ -46,14 +46,12 @@ EOF
         --build-arg DATE="${DATE}" \
         --tag ${IMAGE_TAG}:latest \
         --tag ${IMAGE_TAG}:${VERSION} \
-        --tag ${IMAGE_TAG}:${VERSION}-${DATE} \
         ${PROXY_ARGS} \
         $@ \
         .
 
     [ "${release}" == "release" ] && docker push ${IMAGE_TAG}:latest
     [ "${release}" == "release" ] && docker push ${IMAGE_TAG}:${VERSION}
-    [ "${release}" == "release" ] && docker push ${IMAGE_TAG}:${VERSION}-${DATE}
 }
 
 trap "exit 1" INT TERM QUIT
