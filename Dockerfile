@@ -1,11 +1,8 @@
 FROM javister-docker-docker.bintray.io/javister/javister-docker-base:1.0
 MAINTAINER Viktor Verbitsky <vektory79@gmail.com>
 
-ARG DATE
-
 LABEL \
-    python.version=3.4 \
-    image.date="${DATE}"
+    python.version=3.4
 
 COPY files /
 
